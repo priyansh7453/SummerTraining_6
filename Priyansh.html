@@ -1,0 +1,123 @@
+<script>
+    function sol() {
+    
+    var i = document.getElementById("input").value
+    
+    var xhr = new XMLHttpRequest();
+    
+    
+    xhr.open("GET","http://192.168.43.110/cgi-bin/docker.py?x="+i,true);
+    xhr.send();
+    
+    xhr.onload = function() {
+        var output = xhr.responseText;
+        document.getElementById("a1").innerHTML = output;
+        }
+    }
+    
+    </script>
+    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>DOCKER CONSOLE</title>
+</head>
+
+<style>
+body {
+            text-align: center;
+            background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjCdce7WAvxgkcXKfgemPyKHXKC2NGn2VZwA&usqp=CAU") ;
+            height: 100%;
+            
+            }
+        
+        
+        .text {
+            font-size: 30px;
+            color: rgb(14, 14, 19);
+            top: 0px;
+
+        }
+        .a5 {
+            text-align: center;
+            transform: scale(1,1);
+            
+            }
+        .a3 {
+            background-color: rgb(248, 47, 11);
+            font-size: 40px;
+            text-align: center;
+            left: 200px;
+        }
+        #input {
+            font-size: 40px;
+            background-color: rgb(172, 172, 238)
+        }
+
+.button{
+    padding: 30px;
+    margin:30px;
+    border: 0;
+    background: rgb(218, 3, 3);
+    color: white;
+    
+    cursor: pointer;
+    position: absolute;
+    top: 245px;
+    right: 10px;
+    font-size: 15px;
+    transition: 0.3s;
+    outline: 0;
+    border-radius: 40%;
+    box-shadow: 0 9px rgb(3, 3, 3);
+    background-color: rgb(147, 245, 19);
+            font-size: 20px;
+            text-align: center;
+            top: 30px;
+    
+    
+}
+.button:active {
+            background-color: #0a0dd4;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+        #a1{
+            color:rgba(0, 0, 0, 0.8)(127, 212, 71);
+            background-color: rgb(100, 193, 247);
+            border: rgb(22, 15, 16);
+            border: medium dashed rgb(221, 245, 12);
+            font-size: 20px;
+            top: 200px;
+
+            transform: scale(0.75,0.75);
+            position: relative;
+            bottom: 50px;
+    
+    
+        }
+
+</style>
+<body>
+    <div class="text">
+    <h1><i> Welcome to docker console</i></h1>
+    <h3><i> write run your docker command here </i></h3>
+    
+</div>
+<div class="a3"><b> [root @localhost~]# <input id="input" /></b></div>
+    <button class="button" onclick="sol();">
+        <b>RUN</b>
+    </button> 
+<pre>
+<div id="a1">Press <b>RUN</b> button <div />
+
+<pre/> 
+</body>
+
+    
+
+</html>
